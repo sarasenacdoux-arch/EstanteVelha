@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <title>Estante Velha</title>
+
+  <!-- CSS mínimo (somente cores) -->
+  <style>
+    :root{
+      --vinho:#702F2F;
+      --azul:#435B70;
+      --verde:#2C7063;
+      --bege:#F0E1D4;
+      --claro:#C0DAF0;
+    }
+
+    .bg-vinho{background-color: var(--vinho);}
+    .bg-azul{background-color: var(--azul);}
+    .bg-verde{background-color: var(--verde);}
+    .bg-bege{background-color: var(--bege);}
+    .text-claro{color: var(--claro);}
+  </style>
+</head>
+
+<body class="bg-black text-light">
+
+<!-- NAVBAR -->
+<header class="sticky-top shadow-lg">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-vinho py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="#">
+        <i class="bi bi-book"></i> ESTANTE VELHA
+      </a>
+
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li><a class="nav-link" href="#livros">Livros</a></li>
+          <li><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+          <li><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO / CARROSSEL -->
+<section class="min-vh-100 d-flex align-items-center position-relative">
+
+  <div id="carousel" class="carousel slide carousel-fade w-100 h-100 position-absolute">
+    <div class="carousel-inner h-100">
+
+      <div class="carousel-item active h-100">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+          class="w-100 h-100 object-fit-cover opacity-50">
+
+        <div class="carousel-caption text-start d-flex flex-column justify-content-center h-100">
+          <h1 class="display-2 fw-bold">Estante Velha</h1>
+          <p class="lead">Sebo e livraria comunitária</p>
+          <a class="btn text-white shadow"
+            style="background: var(--verde);">Explorar acervo</a>
+        </div>
+      </div>
+
+      <div class="carousel-item h-100">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+          class="w-100 h-100 object-fit-cover opacity-50">
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- LIVROS -->
+<section id="livros" class="min-vh-100 d-flex align-items-center bg-azul py-5">
+  <div class="container">
+    <h2 class="mb-5">Acervo</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100">
+          <div class="card-body">
+            <h5 class="text-claro">Literatura</h5>
+            <p class="text-secondary small">Edições antigas e esquecidas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100">
+          <div class="card-body">
+            <h5 class="text-claro">Quadrinhos</h5>
+            <p class="text-secondary small">Narrativas visuais raras.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100">
+          <div class="card-body">
+            <h5 class="text-claro">Acadêmicos</h5>
+            <p class="text-secondary small">Conhecimento que permanece.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="min-vh-100 d-flex align-items-center bg-black">
+  <div class="container">
+    <h2 class="mb-4">Sobre</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p class="text-secondary">
+          Livros circulam. Mudam de mãos, acumulam marcas, seguem adiante.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-secondary">
+          A Estante Velha é um espaço onde o uso continua sendo o valor central.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais" class="min-vh-100 d-flex align-items-center bg-verde">
+  <div class="container text-center">
+
+    <h2 class="mb-5">Diferenciais</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="p-4 bg-dark shadow-lg rounded">
+          <h5>Circulação</h5>
+          <p class="text-secondary small">Nada fica parado.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 bg-dark shadow-lg rounded">
+          <h5>Troca</h5>
+          <p class="text-secondary small">Levar e deixar faz parte.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 bg-dark shadow-lg rounded">
+          <h5>Comunidade</h5>
+          <p class="text-secondary small">Leitura compartilhada.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="min-vh-100 d-flex align-items-center bg-black">
+  <div class="container">
+
+    <h2 class="mb-4">Contato</h2>
+
+    <form class="row g-3">
+
+      <div class="col-md-6">
+        <input type="text" class="form-control bg-dark border-secondary text-white"
+          placeholder="Nome">
+      </div>
+
+      <div class="col-md-6">
+        <input type="email" class="form-control bg-dark border-secondary text-white"
+          placeholder="Email">
+      </div>
+
+      <div class="col-12">
+        <textarea class="form-control bg-dark border-secondary text-white"
+          rows="4" placeholder="Mensagem"></textarea>
+      </div>
+
+      <div class="col-12">
+        <button class="btn w-100 text-white shadow"
+          style="background: var(--vinho);">
+          Enviar
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-center py-4 border-top border-secondary">
+  <p class="text-secondary small">Estante Velha — 2026</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
