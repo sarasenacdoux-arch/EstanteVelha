@@ -15,11 +15,11 @@
   <!-- CSS mínimo (somente cores) -->
   <style>
     :root{
-      --vinho:#702F2F;
+      --vinho:#491818;
       --azul:#435B70;
-      --verde:#2C7063;
+      --verde:#102e29;
       --bege:#F0E1D4;
-      --claro:#C0DAF0;
+      --claro:#4c6b88;
     }
 
     .bg-vinho{background-color: var(--vinho);}
@@ -36,8 +36,9 @@
 <header class="sticky-top shadow-lg">
   <nav class="navbar navbar-expand-lg navbar-dark bg-vinho py-3">
     <div class="container">
+      
       <a class="navbar-brand fw-bold fs-3" href="#">
-        <i class="bi bi-book"></i> ESTANTE VELHA
+       <i class="bi bi-book"></i> ESTANTE VELHA
       </a>
 
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -59,27 +60,67 @@
 <!-- HERO / CARROSSEL -->
 <section class="min-vh-100 d-flex align-items-center position-relative">
 
-  <div id="carousel" class="carousel slide carousel-fade w-100 h-100 position-absolute">
+  <div id="carouselHero"
+       class="carousel slide carousel-fade w-100 h-100 position-absolute top-0 start-0"
+       data-bs-ride="carousel">
+
+    <!-- INDICADORES -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- SLIDES -->
     <div class="carousel-inner h-100">
 
-      <div class="carousel-item active h-100">
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active h-100" data-bs-interval="4000">
         <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
-          class="w-100 h-100 object-fit-cover opacity-50">
+             class="d-block w-100 h-100 object-fit-cover opacity-50">
 
-        <div class="carousel-caption text-start d-flex flex-column justify-content-center h-100">
+        <!-- TEXTO SOBRE A IMAGEM -->
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start">
           <h1 class="display-2 fw-bold">Estante Velha</h1>
           <p class="lead">Sebo e livraria comunitária</p>
-          <a class="btn text-white shadow"
-            style="background: var(--verde);">Explorar acervo</a>
+
+          <a href="#livros" class="btn btn-dark text-white px-5 py-3 shadow mt-3">
+            Explorar acervo
+          </a>
         </div>
       </div>
-
-      <div class="carousel-item h-100">
-        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
-          class="w-100 h-100 object-fit-cover opacity-50">
+      
+      <div class="carousel-item h-100" data-bs-interval="4000">
+        <img src="https://images.unsplash.com/photo-1588580000645-4562a6d2c839?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             class="d-block w-100 h-100 object-fit-cover opacity-50">
+      </div>
+      
+      <div class="carousel-item h-100" data-bs-interval="4000">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+             class="d-block w-100 h-100 object-fit-cover opacity-50">
+      </div>
+      
+      <div class="carousel-item h-100" data-bs-interval="4000">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+             class="d-block w-100 h-100 object-fit-cover opacity-50">
+      </div>  
+          
+      <div class="carousel-item h-100" data-bs-interval="4000">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+             class="d-block w-100 h-100 object-fit-cover opacity-50">
       </div>
 
     </div>
+
+    <!-- CONTROLES -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
   </div>
 
 </section>
@@ -123,10 +164,17 @@
 </section>
 
 <!-- SOBRE -->
-<section id="sobre" class="min-vh-100 d-flex align-items-center bg-black">
+<section id="sobre" class="min-vh-100 d-flex align-items-center bg-white">
   <div class="container">
-    <h2 class="mb-4">Sobre</h2>
-
+    <h2 class="mb-4 text-danger-emphasis">Sobre</h2>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+     <h5 class="card-title">Card title</h5>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+         <a href="#" class="btn btn-primary">Go somewhere</a>
+   </div>
+  </div>
     <div class="row">
       <div class="col-md-6">
         <p class="text-secondary">
@@ -151,22 +199,24 @@
     <div class="row g-4">
 
       <div class="col-md-4">
-        <div class="p-4 bg-dark shadow-lg rounded">
-          <h5>Circulação</h5>
-          <p class="text-secondary small">Nada fica parado.</p>
+        <div class="p-3 bg-white shadow-lg rounded">
+          <h5 class="text-black">Circulação</h5>
+          <p class="text-secondary small">Nada fica parado.
+            <img src="" alt="">
+          </p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="p-4 bg-dark shadow-lg rounded">
-          <h5>Troca</h5>
+        <div class="p-3 bg-white shadow-lg rounded">
+          <h5 class="text-black">Troca</h5>
           <p class="text-secondary small">Levar e deixar faz parte.</p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="p-4 bg-dark shadow-lg rounded">
-          <h5>Comunidade</h5>
+        <div class="p-3 bg-white shadow-lg rounded">
+          <h5 class="text-black">Comunidade</h5>
           <p class="text-secondary small">Leitura compartilhada.</p>
         </div>
       </div>
@@ -176,39 +226,107 @@
 </section>
 
 <!-- CONTATO -->
-<section id="contato" class="min-vh-100 d-flex align-items-center bg-black">
+<section id="contato" class="min-vh-100 d-flex align-items-center bg-white">
   <div class="container">
 
-    <h2 class="mb-4">Contato</h2>
 
-    <form class="row g-3">
 
-      <div class="col-md-6">
-        <input type="text" class="form-control bg-dark border-secondary text-white"
-          placeholder="Nome">
-      </div>
+<form class="row g-4 shadow-lg p-4 rounded bg-dark">
 
-      <div class="col-md-6">
-        <input type="email" class="form-control bg-dark border-secondary text-white"
-          placeholder="Email">
-      </div>
+   <div>
+     <h2 class="mb-4 text-white">CONTATO</h2>
+   </div>
 
-      <div class="col-12">
-        <textarea class="form-control bg-dark border-secondary text-white"
-          rows="4" placeholder="Mensagem"></textarea>
-      </div>
-
-      <div class="col-12">
-        <button class="btn w-100 text-white shadow"
-          style="background: var(--vinho);">
-          Enviar
-        </button>
-      </div>
-
-    </form>
-
+  <!-- NOME -->
+  <div class="col-md-6">
+    <label class="form-label text-secondary small">Nome</label>
+    <input 
+      type="text"
+      class="form-control bg-black border-secondary text-white"
+      placeholder="Digite seu nome"
+      required>
   </div>
-</section>
+
+  <!-- EMAIL -->
+  <div class="col-md-6">
+    <label class="form-label text-secondary small">Email</label>
+    <input 
+      type="email"
+      class="form-control bg-black border-secondary text-white"
+      placeholder="Digite seu email"
+      required>
+  </div>
+
+  <!-- TELEFONE -->
+  <div class="col-md-6">
+    <label class="form-label text-secondary small">Telefone</label>
+    <input 
+      type="tel"
+      class="form-control bg-black border-secondary text-white"
+      placeholder="(00) 00000-0000">
+  </div>
+
+  <!-- ASSUNTO -->
+  <div class="col-md-6">
+    <label class="form-label text-secondary small">Assunto</label>
+    <select class="form-select bg-black border-secondary text-white">
+      <option selected disabled>Selecione</option>
+      <option>Compra de livros</option>
+      <option>Venda/Troca</option>
+      <option>Dúvida</option>
+    </select>
+  </div>
+
+  <!-- MENSAGEM -->
+  <div class="col-12">
+    <label class="form-label text-secondary small">Mensagem</label>
+    <textarea 
+      class="form-control bg-black border-secondary text-white"
+      rows="5"
+      placeholder="Digite sua mensagem"
+      required></textarea>
+  </div>
+
+  <!-- CHECKBOX -->
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" required>
+      <label class="form-check-label text-secondary small">
+        Aceito os termos de contato
+      </label>
+    </div>
+  </div>
+
+  <!-- BOTÃO -->
+  <div class="col-12">
+    <button 
+      class="btn w-100 text-white shadow-lg"
+      style="background: var(--vinho);">
+      Enviar Mensagem
+    </button>
+  </div>
+
+</form>
+
+<!--  MENSAGEM DE SUCESSO -->
+<div id="msgSucesso" class="alert alert-success mt-4 d-none text-center shadow-lg">
+    Sua mensagem foi enviada! Em breve retornaremos.
+</div>
+
+<!--  SCRIPT -->
+<script>
+  const form = document.querySelector("form");
+  const msg = document.getElementById("msgSucesso");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    msg.classList.remove("d-none");
+    form.reset();
+  });
+</script>
+  </div>
+ </section>
 
 <!-- FOOTER -->
 <footer class="bg-black text-center py-4 border-top border-secondary">
