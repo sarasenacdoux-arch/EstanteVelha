@@ -1,160 +1,788 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- BOOTSTRAP -->
   <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
+  <!-- ICONS -->
   <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <title>Estante Velha</title>
 
-  <!-- CSS mínimo (somente cores) -->
+  <!-- CSS -->
   <style>
+
     :root{
+      --sangue:#251212;
       --vinho:#491818;
-      --azul:#435B70;
-      --verde:#102e29;
-      --bege:#F0E1D4;
-      --claro:#4c6b88;
+      --vinho-claro:#6b1f1f;
+      --black:#000;
+      --dark:#181818;
     }
 
-    .bg-vinho{background-color: var(--vinho);}
-    .bg-azul{background-color: var(--azul);}
-    .bg-verde{background-color: var(--verde);}
-    .bg-bege{background-color: var(--bege);}
-    .text-claro{color: var(--claro);}
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#000;
+    }
+
+    .bg-vinho{
+      background-color:var(--vinho);
+    }
+
+    .text-vinho{
+      color:var(--vinho);
+    }
+
+    .btn-vinho{
+      background:var(--vinho);
+      color:white;
+      border:none;
+      transition:.3s;
+    }
+
+    .btn-vinho:hover{
+      background:var(--vinho-claro);
+      transform:translateY(-2px);
+    }
+
+    .shadow-vinho{
+      box-shadow:0 0 25px rgba(73,24,24,.35);
+    }
+
+    .card-hover{
+      transition:.3s;
+    }
+
+    .card-hover:hover{
+      transform:translateY(-6px);
+    }
+
+    .carousel-item img{
+      height:100vh;
+      object-fit:cover;
+      filter:brightness(.45);
+    }
+
+    .carousel-caption{
+      bottom:20%;
+    }
+
+    .form-control,
+    .form-select{
+      padding:12px;
+    }
+
+    .form-control:focus,
+    .form-select:focus{
+      border-color:var(--vinho);
+      box-shadow:0 0 15px rgba(73,24,24,.4);
+      background:#000;
+      color:#fff;
+    }
+
+    .cart-card{
+      background:#181818;
+      border-radius:20px;
+      transition:.3s;
+    }
+
+    .cart-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .community-card img{
+      height:260px;
+      object-fit:cover;
+    }
+
   </style>
+
 </head>
 
 <body class="bg-black text-light">
 
 <!-- NAVBAR -->
 <header class="sticky-top shadow-lg">
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-vinho py-3">
+
     <div class="container">
-      
+
       <a class="navbar-brand fw-bold fs-3" href="#">
-       <i class="bi bi-book"></i> ESTANTE VELHA
+        <i class="bi bi-book"></i> ESTANTE VELHA
       </a>
 
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <button class="navbar-toggler"
+              data-bs-toggle="collapse"
+              data-bs-target="#menu">
+
         <span class="navbar-toggler-icon"></span>
+
       </button>
 
       <div class="collapse navbar-collapse" id="menu">
+
         <ul class="navbar-nav ms-auto gap-3">
-          <li><a class="nav-link" href="#livros">LIVROS</a></li>
-          <li><a class="nav-link" href="#sobre">SOBRE</a></li>
-          <li><a class="nav-link" href="#diferenciais">COMUNIDADE DE LEITORES</a></li>
-          <li><a class="nav-link" href="#contato">CONTATO</a></li>
+
+          <li>
+            <a class="nav-link" href="#livros">
+              ACERVO
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#comunidade">
+              COMUNIDADE
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#carrinho">
+              CARRINHO
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#contato">
+              CONTATO
+            </a>
+          </li>
+
         </ul>
+
       </div>
+
     </div>
+
   </nav>
+
 </header>
 
 <!-- HERO / CARROSSEL -->
-<section class="min-vh-100 d-flex align-items-center position-relative">
+<section class="position-relative">
 
   <div id="carouselHero"
-       class="carousel slide carousel-fade w-100 h-100 position-absolute top-0 start-0"
-       data-bs-ride="carousel">
+       class="carousel slide carousel-fade"
+       data-bs-ride="carousel"
+       data-bs-interval="3500">
 
     <!-- INDICADORES -->
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"></button>
+
+      <button type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide-to="0"
+              class="active"></button>
+
+      <button type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide-to="1"></button>
+
+      <button type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide-to="2"></button>
+
+      <button type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide-to="3"></button>
+
+      <button type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide-to="4"></button>
+
     </div>
 
     <!-- SLIDES -->
-    <div class="carousel-inner h-100">
+    <div class="carousel-inner">
 
-      <!-- SLIDE 1 -->
-      <div class="carousel-item active h-100" data-bs-interval="4000">
-        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
-             class="d-block w-100 h-100 object-fit-cover opacity-50">
+      <!-- FOTO 1 -->
+      <div class="carousel-item active">
 
-        <!-- TEXTO SOBRE A IMAGEM -->
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start">
-          <h1 class="display-2 fw-bold">Estante Velha</h1>
-          <p class="lead">Sebo e livraria comunitária</p>
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1920&auto=format&fit=crop"
+             class="d-block w-100">
 
-          <a href="#livros" class="btn btn-dark text-white px-5 py-3 shadow mt-3">
-            Explorar acervo
+        <div class="carousel-caption text-start">
+
+          <h1 class="display-2 fw-bold text-white">
+            Estante Velha
+          </h1>
+
+          <p class="lead text-light">
+            Sebo e comunidade de leitores apaixonados.
+          </p>
+
+          <a href="#livros"
+             class="btn btn-vinho btn-lg px-5 py-3 shadow-lg rounded-pill">
+
+             Explorar Acervo
+
           </a>
+
         </div>
+
       </div>
-      
-      <div class="carousel-item h-100" data-bs-interval="4000">
-        <img src="https://images.unsplash.com/photo-1588580000645-4562a6d2c839?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-             class="d-block w-100 h-100 object-fit-cover opacity-50">
+
+      <!-- FOTO 2 -->
+      <div class="carousel-item">
+
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1920&auto=format&fit=crop"
+             class="d-block w-100">
+
+        <div class="carousel-caption text-start">
+
+          <h1 class="display-3 fw-bold">
+            Histórias raras
+          </h1>
+
+          <p class="lead">
+            Livros antigos e colecionáveis.
+          </p>
+
+        </div>
+
       </div>
-      
-      <div class="carousel-item h-100" data-bs-interval="4000">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
-             class="d-block w-100 h-100 object-fit-cover opacity-50">
+
+      <!-- FOTO 3 -->
+      <div class="carousel-item">
+
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1920&auto=format&fit=crop"
+             class="d-block w-100">
+
+        <div class="carousel-caption text-start">
+
+          <h1 class="display-3 fw-bold">
+            Literatura & Mangás
+          </h1>
+
+          <p class="lead">
+            Edições especiais e clássicos.
+          </p>
+
+        </div>
+
       </div>
-      
-      <div class="carousel-item h-100" data-bs-interval="4000">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
-             class="d-block w-100 h-100 object-fit-cover opacity-50">
-      </div>  
-          
-      <div class="carousel-item h-100" data-bs-interval="4000">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
-             class="d-block w-100 h-100 object-fit-cover opacity-50">
+
+      <!-- FOTO 4 -->
+      <div class="carousel-item">
+
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1920&auto=format&fit=crop"
+             class="d-block w-100">
+
+        <div class="carousel-caption text-start">
+
+          <h1 class="display-3 fw-bold">
+            Comunidade ativa
+          </h1>
+
+          <p class="lead">
+            Troque e descubra novos livros.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- FOTO 5 -->
+      <div class="carousel-item">
+
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1920&auto=format&fit=crop"
+             class="d-block w-100">
+
+        <div class="carousel-caption text-start">
+
+          <h1 class="display-3 fw-bold">
+            Clássicos eternos
+          </h1>
+
+          <p class="lead">
+            Livros que continuam vivos.
+          </p>
+
+        </div>
+
       </div>
 
     </div>
 
     <!-- CONTROLES -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselHero"
+            data-bs-slide="prev">
+
       <span class="carousel-control-prev-icon"></span>
+
     </button>
 
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselHero"
+            data-bs-slide="next">
+
       <span class="carousel-control-next-icon"></span>
+
     </button>
 
   </div>
 
 </section>
 
-<!-- LIVROS -->
-<section id="livros" class="min-vh-100 d-flex align-items-center bg-azul py-5">
+<!-- ACERVO -->
+<section id="livros"
+         class="min-vh-100 d-flex align-items-center bg-dark py-5">
+
   <div class="container">
-    <h2 class="mb-5">Acervo</h2>
+
+    <div class="mb-5">
+
+      <h2 class="fw-bold text-white display-5">
+        Acervo
+      </h2>
+
+      <p class="text-secondary">
+        Descubra diferentes mundos através das páginas.
+      </p>
+
+    </div>
 
     <div class="row g-4">
 
+      <!-- CARD -->
       <div class="col-md-4">
-        <div class="card bg-dark text-light border-0 shadow-lg h-100">
-          <div class="card-body">
-            <h5 class="text-claro">Literatura</h5>
-            <p class="text-secondary small">Edições antigas e esquecidas.</p>
+
+        <a href="#comunidade" class="text-decoration-none">
+
+          <div class="card bg-black text-light border-0 shadow-lg h-100 card-hover">
+
+            <div class="card-body p-4">
+
+              <i class="bi bi-book fs-1 text-white"></i>
+
+              <h5 class="text-white fw-bold mt-3">
+                Literatura
+              </h5>
+
+              <p class="text-secondary small">
+                Edições antigas e histórias inesquecíveis.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="col-md-4">
+
+        <a href="#comunidade" class="text-decoration-none">
+
+          <div class="card bg-black text-light border-0 shadow-lg h-100 card-hover">
+
+            <div class="card-body p-4">
+
+              <i class="bi bi-journal-richtext fs-1 text-white"></i>
+
+              <h5 class="text-white fw-bold mt-3">
+                Quadrinhos
+              </h5>
+
+              <p class="text-secondary small">
+                Narrativas visuais raras e colecionáveis.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="col-md-4">
+
+        <a href="#comunidade" class="text-decoration-none">
+
+          <div class="card bg-black text-light border-0 shadow-lg h-100 card-hover">
+
+            <div class="card-body p-4">
+
+              <i class="bi bi-stars fs-1 text-white"></i>
+
+              <h5 class="text-white fw-bold mt-3">
+                Fantasia
+              </h5>
+
+              <p class="text-secondary small">
+                Aventuras épicas e mundos mágicos.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="col-md-4">
+
+        <a href="#comunidade" class="text-decoration-none">
+
+          <div class="card bg-black text-light border-0 shadow-lg h-100 card-hover">
+
+            <div class="card-body p-4">
+
+              <i class="bi bi-eye fs-1 text-white"></i>
+
+              <h5 class="text-white fw-bold mt-3">
+                Suspense
+              </h5>
+
+              <p class="text-secondary small">
+                Mistérios intensos e tramas envolventes.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="col-md-4">
+
+        <a href="#comunidade" class="text-decoration-none">
+
+          <div class="card bg-black text-light border-0 shadow-lg h-100 card-hover">
+
+            <div class="card-body p-4">
+
+              <i class="bi bi-feather fs-1 text-white"></i>
+
+              <h5 class="text-white fw-bold mt-3">
+                Poesia
+              </h5>
+
+              <p class="text-secondary small">
+                Versos delicados que atravessam gerações.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="col-md-4">
+
+        <a href="#comunidade" class="text-decoration-none">
+
+          <div class="card bg-black text-light border-0 shadow-lg h-100 card-hover">
+
+            <div class="card-body p-4">
+
+              <i class="bi bi-mortarboard fs-1 text-white"></i>
+
+              <h5 class="text-white fw-bold mt-3">
+                Acadêmicos
+              </h5>
+
+              <p class="text-secondary small">
+                Conhecimento que atravessa gerações.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- COMUNIDADE -->
+
+ <section id="comunidade" class="py-5 bg-black">
+
+    <div class="container align-items-center">
+
+    <h1 class="mb-5 fw-bold text-white">Comunidade de Leitores</h1>
+
+    <div class="row g-4">
+
+
+      <!-- CARD 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop"
+               class="card-img-top"
+               style="height: 260px; object-fit: cover;">
+
+          <div class="card-body d-flex flex-column">
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                   class="rounded-circle border border-danger"
+                   width="55"
+                   height="55">
+
+              <div class="ms-3">
+                <h5 class="mb-0 fw-bold text-white">Marina Duarte</h5>
+                <small class="text-secondary">Colecionadora</small>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white">Dom Casmurro</h4>
+
+            <p class="text-secondary flex-grow-1">
+              Edição antiga em ótimo estado. Ideal para colecionadores de literatura brasileira.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <h4 class="fw-bold text-white">R$ 45</h4>
+
+              <a href="#contato"
+                 class="btn rounded-pill px-4 text-white"
+                 style="background-color: var(--bs-danger-text-emphasis); border: none;">
+                 Tenho Interesse
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card bg-dark text-light border-0 shadow-lg h-100">
-          <div class="card-body">
-            <h5 class="text-claro">Quadrinhos</h5>
-            <p class="text-secondary small">Narrativas visuais raras.</p>
+      <!-- CARD 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop"
+               class="card-img-top"
+               style="height: 260px; object-fit: cover;">
+
+          <div class="card-body d-flex flex-column">
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                   class="rounded-circle border border-danger"
+                   width="55"
+                   height="55">
+
+              <div class="ms-3">
+                <h5 class="mb-0 fw-bold text-white">Lucas Ribeiro</h5>
+                <small class="text-secondary">Leitor de Mangás</small>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white">Coleção Berserk</h4>
+
+            <p class="text-secondary flex-grow-1">
+              Volumes conservados e completos. Excelente para fãs de fantasia sombria.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <h4 class="fw-bold text-white">R$ 220</h4>
+
+              <a href="#contato"
+                 class="btn rounded-pill px-4 text-white"
+                 style="background-color: var(--bs-danger-text-emphasis); border: none;">
+                 Tenho Interesse
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card bg-dark text-light border-0 shadow-lg h-100">
-          <div class="card-body">
-            <h5 class="text-claro">Acadêmicos</h5>
-            <p class="text-secondary small">Conhecimento que permanece.</p>
+      <!-- CARD 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+          <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop"
+               class="card-img-top"
+               style="height: 260px; object-fit: cover;">
+
+          <div class="card-body d-flex flex-column">
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                   class="rounded-circle border border-danger"
+                   width="55"
+                   height="55">
+
+              <div class="ms-3">
+                <h5 class="mb-0 fw-bold text-white">Fernanda Alves</h5>
+                <small class="text-secondary">Universitária</small>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white">Clean Code</h4>
+
+            <p class="text-secondary flex-grow-1">
+              Livro essencial para programadores. Pouco usado e sem marcas.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <h4 class="fw-bold text-white">R$ 70</h4>
+
+              <a href="#contato"
+                 class="btn rounded-pill px-4 text-white"
+                 style="background-color: var(--bs-danger-text-emphasis); border: none;">
+                 Tenho Interesse
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+          <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop"
+               class="card-img-top"
+               style="height: 260px; object-fit: cover;">
+
+          <div class="card-body d-flex flex-column">
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/men/75.jpg"
+                   class="rounded-circle border border-danger"
+                   width="55"
+                   height="55">
+
+              <div class="ms-3">
+                <h5 class="mb-0 fw-bold text-white">Rafael Costa</h5>
+                <small class="text-secondary">Fã de Fantasia</small>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white">O Hobbit</h4>
+
+            <p class="text-secondary flex-grow-1">
+              Edição ilustrada com capa dura. Conservação impecável.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <h4 class="fw-bold text-white">R$ 90</h4>
+
+              <a href="#contato"
+                 class="btn rounded-pill px-4 text-white"
+                 style="background-color: var(--bs-danger-text-emphasis); border: none;">
+                 Tenho Interesse
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+          <img src="https://images.unsplash.com/photo-1526243741027-444d633d7365?q=80&w=1200&auto=format&fit=crop"
+               class="card-img-top"
+               style="height: 260px; object-fit: cover;">
+
+          <div class="card-body d-flex flex-column">
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/women/22.jpg"
+                   class="rounded-circle border border-danger"
+                   width="55"
+                   height="55">
+
+              <div class="ms-3">
+                <h5 class="mb-0 fw-bold text-white">Bianca Lima</h5>
+                <small class="text-secondary">Leitora Casual</small>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white">Sherlock Holmes</h4>
+
+            <p class="text-secondary flex-grow-1">
+              Coletânea completa com acabamento premium.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <h4 class="fw-bold text-white">R$ 60</h4>
+
+              <a href="#contato"
+                 class="btn rounded-pill px-4 text-white"
+                 style="background-color: var(--bs-danger-text-emphasis); border: none;">
+                 Tenho Interesse
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop"
+               class="card-img-top"
+               style="height: 260px; object-fit: cover;">
+
+          <div class="card-body d-flex flex-column">
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://randomuser.me/api/portraits/men/11.jpg"
+                   class="rounded-circle border border-danger"
+                   width="55"
+                   height="55">
+
+              <div class="ms-3">
+                <h5 class="mb-0 fw-bold text-white">Carlos Mendes</h5>
+                <small class="text-secondary">Sebista</small>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white">1984</h4>
+
+            <p class="text-secondary flex-grow-1">
+              Livro raro em edição vintage preservada.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <h4 class="fw-bold text-white">R$ 110</h4>
+
+              <a href="#contato"
+                 class="btn rounded-pill px-4 text-white"
+                 style="background-color: var(--bs-danger-text-emphasis); border: none;">
+                 Tenho Interesse
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -163,176 +791,402 @@
   </div>
 </section>
 
-<!-- SOBRE -->
-<section id="sobre" class="min-vh-100 d-flex align-items-center bg-white">
+
+     
+
+<!-- CARRINHO -->
+<section id="carrinho" class="py-5 bg-white">
+
   <div class="container">
-    <h2 class="mb-4 text-danger-emphasis">Sobre</h2>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-     <h5 class="card-title">Card title</h5>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-         <a href="#" class="btn btn-primary">Go somewhere</a>
-   </div>
-  </div>
-    <div class="row">
-      <div class="col-md-6">
-        <p class="text-secondary">
-          Livros circulam. Mudam de mãos, acumulam marcas, seguem adiante.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <p class="text-secondary">
-          A Estante Velha é um espaço onde o uso continua sendo o valor central.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- DIFERENCIAIS -->
-<section id="diferenciais" class="min-vh-100 d-flex align-items-center bg-verde">
-  <div class="container text-center">
+    <div class="text-center mb-5 ">
 
-    <h2 class="mb-5">Diferenciais</h2>
+      <h1 class="fw-bold text-dark">
+        Finalizar Interesse
+      </h1>
 
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="p-3 bg-white shadow-lg rounded">
-          <h5 class="text-black">Circulação</h5>
-          <p class="text-secondary small">Nada fica parado.
-            <img src="" alt="">
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="p-3 bg-white shadow-lg rounded">
-          <h5 class="text-black">Troca</h5>
-          <p class="text-secondary small">Levar e deixar faz parte.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="p-3 bg-white shadow-lg rounded">
-          <h5 class="text-black">Comunidade</h5>
-          <p class="text-secondary small">Leitura compartilhada.</p>
-        </div>
-      </div>
+      <p class="text-secondary">
+         Escolha o livro desejado, preencha seus dados e envie sua solicitação. Nossa equipe verificará a disponibilidade do exemplar e retornará o contato em até 24 horas..
+      </p>
 
     </div>
+
+    <div class="row g-5 align-items-center">
+
+
+      <!-- FORM -->
+      <div class="col-lg-7 align-items-center">
+
+        <form class="bg-dark text-light p-5 rounded-5 shadow-lg shadow-vinho">
+
+          <h2 class="fw-bold mb-4">
+            Dados do Pedido
+          </h2>
+
+          <div class="row g-4">
+
+            <div class="col-md-6">
+
+              <label class="form-label fw-bold">
+                Nome
+              </label>
+
+              <input type="text"
+                     class="form-control bg-black border-secondary text-white"
+                     placeholder="Digite seu nome">
+
+            </div>
+
+            <div class="col-md-6">
+
+              <label class="form-label fw-bold">
+                Email
+              </label>
+
+              <input type="email"
+                     class="form-control bg-black border-secondary text-white"
+                     placeholder="Digite seu email">
+
+            </div>
+
+            <div class="col-12">
+
+              <label class="form-label fw-bold">
+                Escolha seu livro de interesse
+              </label>
+
+              <select class="form-select bg-black border-secondary text-white">
+
+                <option selected disabled>
+                  Selecione seu livro
+                </option>
+
+   <!-- CLÁSSICOS -->
+     <option>Dom Casmurro</option>
+     <option>Memórias Póstumas de Brás Cubas</option>
+     <option>O Cortiço</option>
+     <option>Capitães da Areia</option>
+     <option>Grande Sertão: Veredas</option>
+     <option>Vidas Secas</option>
+     <option>A Hora da Estrela</option>
+     <option>1984</option>
+     <option>A Revolução dos Bichos</option>
+     <option>Orgulho e Preconceito</option>
+     <option>Jane Eyre</option>
+     <option>Crime e Castigo</option>
+     <option>Os Miseráveis</option>
+     <option>O Morro dos Ventos Uivantes</option>
+     <option>Drácula</option>
+     <option>Frankenstein</option>
+     <option>O Pequeno Príncipe</option>
+     <option>O Processo</option>
+     <option>A Metamorfose</option>
+     <option>Moby Dick</option>
+
+    <!-- FANTASIA -->
+<option>O Hobbit</option>
+<option>O Senhor dos Anéis</option>
+<option>Silmarillion</option>
+<option>Harry Potter e a Pedra Filosofal</option>
+<option>Harry Potter e o Cálice de Fogo</option>
+<option>Percy Jackson e o Ladrão de Raios</option>
+<option>As Crônicas de Nárnia</option>
+<option>Eragon</option>
+<option>A Roda do Tempo</option>
+<option>Game of Thrones</option>
+<option>A Guerra dos Tronos</option>
+<option>O Nome do Vento</option>
+<option>Coraline</option>
+<option>Deuses Americanos</option>
+<option>Mistborn</option>
+
+<!-- SUSPENSE / TERROR -->
+<option>It: A Coisa</option>
+<option>O Iluminado</option>
+<option>Doutor Sono</option>
+<option>Misery</option>
+<option>Bird Box</option>
+<option>Caixa de Pássaros</option>
+<option>O Silêncio dos Inocentes</option>
+<option>Garota Exemplar</option>
+<option>Verity</option>
+<option>A Paciente Silenciosa</option>
+<option>Invocação do Mal</option>
+<option>Psicose</option>
+
+<!-- ROMANCE -->
+<option>É Assim que Acaba</option>
+<option>É Assim que Começa</option>
+<option>A Culpa é das Estrelas</option>
+<option>Como Eu Era Antes de Você</option>
+<option>Teto para Dois</option>
+<option>Vermelho, Branco e Sangue Azul</option>
+<option>O Diário de uma Paixão</option>
+<option>After</option>
+<option>Crepúsculo</option>
+<option>Cidade da Lua Crescente</option>
+
+<!-- FICÇÃO CIENTÍFICA -->
+<option>Duna</option>
+<option>Neuromancer</option>
+<option>Eu, Robô</option>
+<option>Fundação</option>
+<option>Admirável Mundo Novo</option>
+<option>Fahrenheit 451</option>
+<option>Blade Runner</option>
+<option>Jogador Nº 1</option>
+<option>Solaris</option>
+<option>Interestelar</option>
+
+<!-- ACADÊMICOS -->
+<option>Clean Code</option>
+<option>Algoritmos</option>
+<option>Estruturas de Dados em C</option>
+<option>Introdução à Programação</option>
+<option>Python para Iniciantes</option>
+<option>Engenharia de Software</option>
+<option>Banco de Dados</option>
+<option>Redes de Computadores</option>
+<option>Arquitetura Limpa</option>
+<option>O Programador Pragmático</option>
+<option>Design Patterns</option>
+<option>HTML e CSS</option>
+<option>JavaScript: O Guia Definitivo</option>
+
+<!-- FILOSOFIA -->
+<option>Assim Falou Zaratustra</option>
+<option>Além do Bem e do Mal</option>
+<option>A República</option>
+<option>Meditações</option>
+<option>O Banquete</option>
+<option>O Mundo de Sofia</option>
+<option>O Príncipe</option>
+<option>A Arte da Guerra</option>
+
+<!-- MANGÁS -->
+<option>Berserk</option>
+<option>One Piece</option>
+<option>Naruto</option>
+<option>Bleach</option>
+<option>Dragon Ball</option>
+<option>Dragon Ball Z</option>
+<option>Attack on Titan</option>
+<option>Shingeki no Kyojin</option>
+<option>Death Note</option>
+<option>Tokyo Ghoul</option>
+<option>Demon Slayer</option>
+<option>Kimetsu no Yaiba</option>
+<option>Jujutsu Kaisen</option>
+<option>Chainsaw Man</option>
+<option>Spy x Family</option>
+<option>Vinland Saga</option>
+<option>Monster</option>
+<option>20th Century Boys</option>
+<option>Akira</option>
+<option>Blue Lock</option>
+<option>Haikyuu!!</option>
+<option>Fullmetal Alchemist</option>
+<option>JoJo's Bizarre Adventure</option>
+<option>Hunter x Hunter</option>
+<option>Slam Dunk</option>
+<option>Vagabond</option>
+<option>Goodnight Punpun</option>
+<option>Tokyo Revengers</option>
+<option>Black Clover</option>
+<option>Solo Leveling</option>
+
+   <!-- HQS -->
+    <option>Batman: O Cavaleiro das Trevas</option>
+    <option>Batman: Ano Um</option>
+    <option>Watchmen</option>
+    <option>V de Vingança</option>
+    <option>Sandman</option>
+    <option>Homem-Aranha: Blue</option>
+    <option>X-Men: Dias de um Futuro Esquecido</option>
+    <option>Superman: Entre a Foice e o Martelo</option>
+    <option>Invencível</option>
+    <option>The Walking Dead</option>
+
+   <!-- JUVENIL -->
+    <option>Diário de um Banana</option>
+    <option>Extraordinário</option>
+    <option>Maze Runner</option>
+    <option>Jogos Vorazes</option>
+    <option>Divergente</option>
+    <option>O Labirinto do Fauno</option>
+    <option>Desventuras em Série</option>
+
+   <!-- POESIA -->
+    <option>Milk and Honey</option>
+    <option>Outros Jeitos de Usar a Boca</option>
+    <option>Antologia Poética</option>
+    <option>Fernando Pessoa: Poemas</option>
+    <option>Vinicius de Moraes: Sonetos</option>
+    <option>Carlos Drummond de Andrade</option>
+
+   <!-- AUTOAJUDA -->
+    <option>Hábitos Atômicos</option>
+    <option>O Poder do Hábito</option>
+    <option>Mindset</option>
+    <option>Pai Rico, Pai Pobre</option>
+    <option>Quem Pensa Enriquece</option>
+    <option>A Sutil Arte de Ligar o F*da-se</option>
+    <option>As 48 Leis do Poder</option>
+    <option>O Homem Mais Rico da Babilônia</option>
+
+   <!-- TRUE CRIME -->
+    <option>Zodíaco</option>
+    <option>Mindhunter</option>
+    <option>Ted Bundy: Um Estranho ao Meu Lado</option>
+    <option>Caso Evandro</option>
+ 
+   <!-- HISTÓRIA -->
+    <option>Sapiens</option>
+    <option>Homo Deus</option>
+    <option>Armas, Germes e Aço</option>
+    <option>A Segunda Guerra Mundial</option>
+    <option>Napoleão: Uma Biografia</option>
+
+   <!-- RELIGIÃO -->
+    <option>Biblia Sagrada</option>
+    <option>O Alquimista</option>
+    <option>O Livro dos Espíritos</option>
+    <option>Bhagavad Gita</option>
+    <option>Confissões</option>
+
+              </select>
+
+            </div>
+
+            <div class="col-12">
+
+              <button class="btn btn-vinho w-100 py-3 fw-bold rounded-pill shadow-lg">
+                Finalizar Pedido
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 <!-- CONTATO -->
-<section id="contato" class="min-vh-100 d-flex align-items-center bg-white">
+<section id="contato"
+         class="min-vh-100 d-flex align-items-center bg-white">
+
   <div class="container">
 
+    <form class="row g-4 shadow-lg p-4 rounded bg-dark shadow-vinho">
 
+      <div>
 
-<form class="row g-4 shadow-lg p-4 rounded bg-dark">
+        <h2 class="mb-4 text-white fw-bold">
+          CONTATO
+        </h2>
+      </div>
 
-   <div>
-     <h2 class="mb-4 text-white fw-bold">CONTATO</h2>
-   </div>
+      <!-- NOME -->
+      <div class="col-md-6">
 
-  <!-- NOME -->
-  <div class="col-md-6">
-    <label class="form-label text-secondary small fw-bold">Nome</label>
-    <input 
-      type="text"
-      class="form-control bg-black border-secondary text-white fw-bold"
-      placeholder="Digite seu nome"
-      required>
-  </div>
+        <label class="form-label text-secondary small fw-bold">
+          Nome
+        </label>
 
-  <!-- EMAIL -->
-  <div class="col-md-6">
-    <label class="form-label text-secondary small fw-bold ">Email</label>
-    <input 
-      type="email"
-      class="form-control bg-black border-secondary text-white fw-bold"
-      placeholder="Digite seu email"
-      required>
-  </div>
+        <input type="text"
+               class="form-control bg-black border-secondary text-white fw-bold"
+               placeholder="Digite seu nome"
+               required>
 
-  <!-- TELEFONE -->
-  <div class="col-md-6">
-    <label class="form-label text-secondary small fw-bold">Telefone</label>
-    <input 
-      type="tel"
-      class="form-control bg-black border-secondary text-white fw-bold"
-      placeholder="(00) 00000-0000">
-  </div>
+      </div>
 
-  <!-- ASSUNTO -->
-  <div class="col-md-6">
-    <label class="form-label text-secondary small fw-bold">Assunto</label>
-    <select class="form-select bg-black border-secondary text-white fw-bold">
-      <option selected disabled>Selecione</option>
-      <option>Compra de livros</option>
-      <option>Venda/Troca</option>
-      <option>Dúvida</option>
-    </select>
-  </div>
+      <!-- EMAIL -->
+      <div class="col-md-6">
 
-  <!-- MENSAGEM -->
-  <div class="col-12">
-    <label class="form-label text-secondary small fw-bold">Mensagem</label>
-    <textarea 
-      class="form-control bg-black border-secondary text-white fw-bold"
-      rows="5"
-      placeholder="Digite sua mensagem"
-      required></textarea>
-  </div>
+        <label class="form-label text-secondary small fw-bold">
+          Email
+        </label>
 
-  <!-- CHECKBOX -->
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" required>
-      <label class="form-check-label text-secondary small fw-bold">
-        Aceito os termos de contato
-      </label>
+        <input type="email"
+               class="form-control bg-black border-secondary text-white fw-bold"
+               placeholder="Digite seu email"
+               required>
+
+      </div>
+
+      <!-- MENSAGEM -->
+      <div class="col-12">
+
+        <label class="form-label text-secondary small fw-bold">
+          Mensagem
+        </label>
+
+        <textarea class="form-control bg-black border-secondary text-white fw-bold"
+                  rows="5"
+                  placeholder="Digite sua mensagem"></textarea>
+
+      </div>
+
+      <!-- BOTÃO -->
+      <div class="col-12">
+
+        <button class="btn btn-vinho w-100 shadow-lg fw-bold py-3">
+          Enviar Mensagem
+        </button>
+
+      </div>
+
+    </form>
+
+    <!-- MENSAGEM -->
+    <div id="msgSucesso"
+         class="alert alert-success mt-4 d-none text-center shadow-lg">
+
+      Sua mensagem foi enviada! Em breve retornaremos.
+
     </div>
+
   </div>
 
-  <!-- BOTÃO -->
-  <div class="col-12">
-    <button 
-      class="btn w-100 text-white shadow-lg fw-bold"
-      style="background: var(--vinho);">
-      Enviar Mensagem
-    </button>
-  </div>
-
-</form>
-
-<!--  MENSAGEM DE SUCESSO -->
-<div id="msgSucesso" class="alert alert-success mt-4 d-none text-center shadow-lg">
-    Sua mensagem foi enviada! Em breve retornaremos.
-</div>
-
-<!--  SCRIPT -->
-<script>
-  const form = document.querySelector("form");
-  const msg = document.getElementById("msgSucesso");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    msg.classList.remove("d-none");
-    form.reset();
-  });
-</script>
-  </div>
  </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-center py-4 border-top border-secondary">
-  <p class="text-secondary small">Estante Velha — 2026</p>
-</footer>
+ <footer class="bg-black text-center py-4 border-top border-secondary">
 
+  <p class="text-secondary small">
+
+    © 2026 Estante Velha - Todos os direitos reservados
+
+  </p>
+
+ </footer>
+
+<!-- SCRIPT -->
+ <script>
+
+  const form = document.querySelector("form");
+  const msg = document.getElementById("msgSucesso");
+
+  form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    msg.classList.remove("d-none");
+
+    form.reset();
+
+  });
+
+ </script>
+
+<!-- BOOTSTRAP -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
